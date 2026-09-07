@@ -45,5 +45,9 @@ public class helloword {
 	        System.out.println();
 	    }	
 	}
+	
+<img width="1005" height="847" alt="image" src="https://github.com/user-attachments/assets/99a9b6db-23e5-438d-a75c-49ab096818dd" />
+<img width="1833" height="827" alt="image" src="https://github.com/user-attachments/assets/c078b98e-5be1-4c54-bcbf-6810d6244af6" />
+
 
 }
