@@ -51,3 +51,30 @@ public class helloword {
 
 
 }
+
+public class helloword {
+
+	public static void main(String[] args) 
+	{
+		int n = 20; 
+
+		 int prev = 0, curr = 1;
+
+		System.out.print(prev + " ");
+		System.out.print(curr + " ");
+
+		for (int i = 2; i < n; i++) {
+			int next = prev + curr;
+			System.out.print(next + " ");
+			prev = curr;
+			curr = next;
+		}
+
+		// TODO Auto-generated method stub
+	}
+}
+<img width="1852" height="872" alt="image" src="https://github.com/user-attachments/assets/8d26082b-1c47-45bb-9fd1-c06da09d768b" />
+
+
+
+
