@@ -1,5 +1,5 @@
 
-public class helloword {
+HOMEWORK1
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -52,7 +52,7 @@ public class helloword {
 
 }
 
-public class helloword {
+HOMEWORK2
 
 	public static void main(String[] args) 
 	{
