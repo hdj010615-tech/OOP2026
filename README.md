@@ -76,5 +76,26 @@ HOMEWORK2
 <img width="1852" height="872" alt="image" src="https://github.com/user-attachments/assets/8d26082b-1c47-45bb-9fd1-c06da09d768b" />
 
 
+HOMEWORK3
+
+
+	public static void main(String[] args)
+	{
+		float val1 = 1;
+		float val2 = 2;
+
+		for (int i = 0; i < 20; i++) {
+			float value = val2 / val1;
+			System.out.println(val2 + "/" + val1 + " = " + value);
+			float temp = val1;
+			val1 = val2;
+			val2 = temp + val2;
+		}
+	}
+<img width="915" height="845" alt="스크린샷 2026-09-14 142918" src="https://github.com/user-attachments/assets/433c60a1-4da3-4ce1-9df8-b0bdb0daf53a" />
+
+
+
+
 
 
