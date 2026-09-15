@@ -95,6 +95,22 @@ HOMEWORK3
 <img width="915" height="845" alt="스크린샷 2026-09-14 142918" src="https://github.com/user-attachments/assets/433c60a1-4da3-4ce1-9df8-b0bdb0daf53a" />
 
 
+HOMEWORK4
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,j;
+		for(i=1; i<=9; i++) {
+			for(j=1; j<=9; j++) 
+				System.out.printf("%d * %d = %d\n",i,j,i*j);
+		}
+	}
+
+<img width="907" height="298" alt="image" src="https://github.com/user-attachments/assets/092b71cd-ca72-41bc-b115-dc3a3b988b72" />
+<img width="733" height="861" alt="image" src="https://github.com/user-attachments/assets/f12eb31d-fc29-42f0-ac3d-199b1c2b4f4f" />
+<img width="725" height="861" alt="image" src="https://github.com/user-attachments/assets/92a5b02e-c9d8-4f69-8f65-4c1b2ae10daf" />
+
+
 
 
 
