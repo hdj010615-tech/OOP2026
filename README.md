@@ -126,6 +126,39 @@ HOMEWORK5
 
 <img width="1507" height="847" alt="스크린샷 2026-09-28 141330" src="https://github.com/user-attachments/assets/e1a0dc47-3234-40ef-ba73-5526c31430ca" />
 
+HOMEWORK6
+package HOMEWORK;
+
+public class HOMEWORK6 {
+    public static void main(String[] args) {
+        int i, j, n = 10;
+        int array[] = new int[n];
+        int binomial[][] = new int[n][n];
+        float farr[] = new float[n];
+        double darr[] = new double[n];
+
+        for (i = 0; i < n; i++) {
+            binomial[i][0] = binomial[i][i] = 1;
+            for (j = 1; j < i; j++) {
+                binomial[i][j] = binomial[i-1][j-1] + binomial[i-1][j];
+            }
+        }
+        printArray(n, binomial);
+    }
+
+    static void printArray(int n, int binomial[][]) {
+        int i, j;
+        for (i = 0; i < n; i++) {
+            for (j = 0; j <= i; j++) {
+                System.out.print(binomial[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+<img width="1511" height="868" alt="image" src="https://github.com/user-attachments/assets/16f26aaa-e8ae-42c3-a211-bf958782c287" />
+
+
 
 
 
