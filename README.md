@@ -110,6 +110,21 @@ HOMEWORK4
 <img width="733" height="861" alt="image" src="https://github.com/user-attachments/assets/f12eb31d-fc29-42f0-ac3d-199b1c2b4f4f" />
 <img width="725" height="861" alt="image" src="https://github.com/user-attachments/assets/92a5b02e-c9d8-4f69-8f65-4c1b2ae10daf" />
 
+HOMEWORK5
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,n=100,sign=1;
+		double sum=0;
+			for(i=0;i<n;i++) {
+				sum += sign*1./((2.*i+1.)*Math.pow(3.,i));
+				sign *= -1;
+			}
+			System.out.println(sum*Math.sqrt(12));
+
+	}
+
+<img width="1507" height="847" alt="스크린샷 2026-09-28 141330" src="https://github.com/user-attachments/assets/e1a0dc47-3234-40ef-ba73-5526c31430ca" />
 
 
 
