@@ -221,6 +221,41 @@ HOMEWORK8
 <img width="1248" height="681" alt="image" src="https://github.com/user-attachments/assets/e9ccd402-a47d-4e80-a84c-91f98e05ac52" />
 
 
+HOMEWORK10
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int array_count, max_value, bin_size, display_scale, hist_size;
+		if(args.length !=4)
+			return;
+		array_count = Integer.parseInt(args[0]);
+		max_value = Integer.parseInt(args[1]);
+		bin_size = Integer.parseInt(args[2]);
+		display_scale = Integer.parseInt(args[3]);
+		hist_size = max_value/bin_size;
+		
+		int[] arr = new int[array_count];
+		int[] hist = new int[hist_size];
+		for (int i=0; i<array_count; i++) {
+			arr[i] = (int) (Math.random()*max_value);
+		}
+		for (int i=0; i<array_count; i++) {
+			System.out.print(arr[i] + " ");  
+		}
+		System.out.println();  
+		
+		for (int i=0; i<array_count; i++) {
+			hist[arr[i]/bin_size]++;
+		}
+		for (int i=0; i<hist_size; i++) {
+			System.out.print(hist[i] + " ");  
+		}
+		System.out.println();  
+	}
+<img width="1750" height="838" alt="image" src="https://github.com/user-attachments/assets/3156c0d0-3d80-4ae7-a35f-c2109aac082c" />
+
+
+
+
 
 
 
