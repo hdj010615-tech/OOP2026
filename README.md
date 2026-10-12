@@ -190,6 +190,37 @@ HOMEWORK7
 
 <img width="1195" height="886" alt="스크린샷 2026-10-12 142531" src="https://github.com/user-attachments/assets/c7ea78e9-81c1-478a-bf40-41447de3c866" />
 
+HOMEWORK8
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int studentCount = 30; 
+        int subjectCount = 4;   
+        
+        int[][] score = new int[studentCount][subjectCount];
+
+        System.out.println("번호\t국어\t영어\t수학\t과학\t총점");
+      
+
+        for (int i = 0; i < studentCount; i++) {
+            int sum = 0; 
+            
+            for (int j = 0; j < subjectCount; j++) {
+                score[i][j] = (int) (Math.random() * 101); 
+                sum += score[i][j];
+            }
+
+            System.out.print((i + 1) + "\t");
+            for (int j = 0; j < subjectCount; j++) {
+                System.out.print(score[i][j] + "\t");
+            }
+            System.out.println(sum);
+        }
+    }	
+	}
+<img width="1248" height="681" alt="image" src="https://github.com/user-attachments/assets/e9ccd402-a47d-4e80-a84c-91f98e05ac52" />
+
+
 
 
 
