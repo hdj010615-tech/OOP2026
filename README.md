@@ -157,6 +157,39 @@ public class HOMEWORK6 {
 <img width="1511" height="868" alt="image" src="https://github.com/user-attachments/assets/16f26aaa-e8ae-42c3-a211-bf958782c287" />
 
 
+HOMEWORK7
+
+	public static void main(String[] args) {
+		   int data[] = new int[20];
+	        for (int i = 0; i < 20; i++)
+	            data[i] = (int)(Math.random() * 100);
+
+	        System.out.println("정렬 전");
+	        for (int i = 0; i < 20; i++)
+	            System.out.print(data[i] + " ");
+	        System.out.println();
+
+	        // 선택 정렬
+	        for (int i = 0; i < 19; i++) {
+	            int min = i;                      
+	            for (int j = i + 1; j < 20; j++) {
+	                if (data[j] < data[min])
+	                    min = j;
+	            }
+	            int temp = data[i];              
+	            data[i] = data[min];
+	            data[min] = temp;
+	        }
+
+	        System.out.println("정렬 후");
+	        for (int i = 0; i < 20; i++)
+	            System.out.print(data[i] + " ");
+	        System.out.println();
+
+	}
+
+<img width="1195" height="886" alt="스크린샷 2026-10-12 142531" src="https://github.com/user-attachments/assets/c7ea78e9-81c1-478a-bf40-41447de3c866" />
+
 
 
 
