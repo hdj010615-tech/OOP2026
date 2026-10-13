@@ -395,6 +395,126 @@ public class HOMREWORK_13 {
 }
 <img width="961" height="716" alt="image" src="https://github.com/user-attachments/assets/6e4681ef-8862-448c-87f5-e03df9697e18" />
 
+HOMEWORK14
+
+package HOMEWORK14;
+
+public class HOMEWORK14 {
+    public static void main(String[] args) {
+        int size = 100;
+        int data[] = new int[size];
+        for (int i = 0; i < size; i++)
+            data[i] = (int) (Math.random() * 100);
+
+        Numbers obj = new Numbers(data);
+        obj.display();
+
+        System.out.printf("산술평균 : %5.2f\n", obj.getArithmaticMean());
+        System.out.printf("기하평균 : %5.2f\n", obj.getGeometricMean());
+        System.out.printf("조화평균 : %5.2f\n", obj.getHarmonicMean());
+        System.out.printf("중앙값   : %d\n", obj.getMedian());
+
+        // 히스토그램 출력 (시작: 0, 끝: 100, 구간 수: 10, 축소 비율: 1)
+        obj.drawHistogram(0, 100, 10, 1);
+    }
+}
+
+class Numbers {
+    int num[];
+
+    Numbers(int num[]) {
+        this.num = num;
+    }
+
+    double getTotal() {
+        double sum = 0;
+        for (int i = 0; i < num.length; i++)
+            sum += num[i];
+        return sum;
+    }
+
+    double getArithmaticMean() {
+        return getTotal() / num.length;
+    }
+
+    // 조화평균
+    double getHarmonicMean() {
+        double sum = 0;
+        for (int i = 0; i < num.length; i++) {
+            if (num[i] == 0) continue; // 0으로 나누기 방지
+            sum += 1.0 / num[i];
+        }
+        return sum == 0 ? 0 : num.length / sum;
+    }
+
+    // 기하평균
+    double getGeometricMean() {
+        double prod = 1.0;
+        for (int i = 0; i < num.length; i++) {
+            prod *= num[i];
+        }
+        return Math.pow(prod, (double) 1.0 / num.length);
+    }
+
+    // 중앙값 (정렬 후 가운데 값)
+    int getMedian() {
+        sorting();
+        return num[num.length / 2];
+    }
+
+    // 선택 정렬 (Selection Sort)
+    void sorting() {
+        for (int i = 0; i < num.length - 1; i++) {
+            int min = i;
+            for (int j = i + 1; j < num.length; j++) {
+                if (num[j] < num[min])
+                    min = j;
+            }
+            int temp = num[i];
+            num[i] = num[min];
+            num[min] = temp;
+        }
+    }
+
+    // 도수분포표 히스토그램 출력
+    void drawHistogram(int start, int end, int binCount, int scale) {
+        int max_value = end - start;
+        int bin_size = max_value / binCount;
+        int[] hist = new int[binCount];
+
+        // 구간별 데이터 개수 카운트
+        for (int i = 0; i < num.length; i++) {
+            int index = num[i] / bin_size;
+            if (index >= binCount) index = binCount - 1;
+            hist[index]++;
+        }
+
+        System.out.println("\n===== 도수분포표 =====");
+        for (int i = 0; i < binCount; i++) {
+            int rangeStart = start + (i * bin_size);
+            int rangeEnd = rangeStart + bin_size - 1;
+
+            System.out.printf("%2d~%2d\t:", rangeStart, rangeEnd);
+
+            // scale 비율에 맞춰 # 출력
+            int hashCount = hist[i] / scale;
+            for (int j = 0; j < hashCount; j++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+    }
+
+    void display() {
+        System.out.printf("%3d :", num.length);
+        for (int i = 0; i < num.length; i++)
+            System.out.printf("%3d ", num[i]);
+        System.out.println();
+    }
+}
+
+<img width="701" height="561" alt="image" src="https://github.com/user-attachments/assets/696bf90f-8dea-4a5b-9541-19ee57c0914a" />
+
 
 
 
