@@ -285,6 +285,115 @@ HOMEWORK11
 	
 <img width="1452" height="807" alt="image" src="https://github.com/user-attachments/assets/24def2e3-220e-42c6-8647-a5d3d7b72f16" />
 
+HOMEWORK 13
+
+package HOMREWORK_13;
+
+import java.util.Scanner;
+
+public class HOMREWORK_13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            String inputString = scanner.nextLine().trim();
+
+            if (inputString.isEmpty()) continue;
+
+            // 하나 이상의 공백 기준으로 분할
+            String[] arrOfStr = inputString.split("\\s+");
+
+            // 피연산자 2개 (토큰 3개: 숫자 연산자 숫자)
+            if (arrOfStr.length == 3) {
+                try {
+                    double num1 = Double.parseDouble(arrOfStr[0]);
+                    String op = arrOfStr[1];
+                    double num2 = Double.parseDouble(arrOfStr[2]);
+
+                    double result = calculate(num1, op, num2);
+                    printResult(result);
+                } catch (NumberFormatException e) {
+                    System.out.println("잘못된 숫자 형식입니다.");
+                } catch (ArithmeticException e) {
+                    System.out.println(e.getMessage());
+                }
+            } 
+            // 피연산자 3개 (토큰 5개: 숫자 연산자 숫자 연산자 숫자)
+            else if (arrOfStr.length == 5) {
+                try {
+                    double num1 = Double.parseDouble(arrOfStr[0]);
+                    String op1 = arrOfStr[1];
+                    double num2 = Double.parseDouble(arrOfStr[2]);
+                    String op2 = arrOfStr[3];
+                    double num3 = Double.parseDouble(arrOfStr[4]);
+
+                    // 연산자 우선순위 판별
+                    double result;
+                    if (getPriority(op2) > getPriority(op1)) {
+                        double right = calculate(num2, op2, num3);
+                        result = calculate(num1, op1, right);
+                    } else {
+                        double left = calculate(num1, op1, num2);
+                        result = calculate(left, op2, num3);
+                    }
+
+                    printResult(result);
+                } catch (NumberFormatException e) {
+                    System.out.println("잘못된 숫자 형식입니다.");
+                } catch (ArithmeticException e) {
+                    System.out.println(e.getMessage());
+                }
+            } 
+            else {
+                System.out.println("입력 형식이 올바르지 않습니다.");
+            }
+        }
+    }
+
+    private static int getPriority(String op) {
+        switch (op) {
+            case "+": case "-":
+                return 1;
+            case "*": case "/": case "#":
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+    private static double calculate(double a, String op, double b) {
+        switch (op) {
+            case "+": return a + b;
+            case "-": return a - b;
+            case "*": return a * b;
+            case "/":
+                if (b == 0) throw new ArithmeticException("0으로 나눌 수 없습니다.");
+                return a / b;
+            case "#":
+                return gcd((int) a, (int) b);
+            default:
+                throw new ArithmeticException("지원하지 않는 연산자입니다: " + op);
+        }
+    }
+
+    private static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = a % b;
+            a = b;
+            b = temp;
+        }
+        return Math.abs(a);
+    }
+
+    private static void printResult(double result) {
+        if (result == (long) result) {
+            System.out.println((long) result);
+        } else {
+            System.out.printf("%.2f\n", result);
+        }
+    }
+}
+<img width="961" height="716" alt="image" src="https://github.com/user-attachments/assets/6e4681ef-8862-448c-87f5-e03df9697e18" />
 
 
 
